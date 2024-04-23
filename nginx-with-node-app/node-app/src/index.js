@@ -1,4 +1,5 @@
 const http = require('http')
+const mysql = require('mysql')
 
 const config = {
     host: 'db',
@@ -7,15 +8,13 @@ const config = {
     database: 'appdb',
 }
 
-const mysql = require('mysql')
-
 const connection = mysql.createConnection(config)
 const createTableCommand = 'create table if not exists people(id int not null auto_increment, name varchar(255), primary key(id));'
 connection.query(createTableCommand)
 connection.end()
 
 const server = http.createServer((req, res) => {
-    console.log(req.url);
+
     if (req.url === '/') {
         const randomUser = `User ${Math.floor(Math.random() * 1e6)}`
         const connection = mysql.createConnection(config)

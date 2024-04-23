@@ -20,7 +20,8 @@ services:
     container_name: app
     image: urielgoncalves/node-app:latest
     volumes:
-      - ./node-app:/home/app
+      - /home/app/node_modules
+      - ./node-app:/home/app # It will override the /home/app content without the anonymous volume above
     tty: true
     networks:
       - app-network
