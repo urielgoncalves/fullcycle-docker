@@ -1,5 +1,5 @@
 # Note
-- This is just for Docker study purposes
+- This is just for Docker study purposes, simulating a development environment
 
 # Running
 - Clone the repo
