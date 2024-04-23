@@ -37,7 +37,7 @@ services:
     image: mysql:5.7.16
     container_name: db
     restart: always
-    tty: "true"
+    tty: true
     volumes:
       - ./mysql-data:/var/lib/mysql
     environment:
@@ -49,14 +49,15 @@ services:
       - "3306:3306"
     healthcheck:
       test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
-      timeout: 20s
+      timeout: 10s
       retries: 5
 
-volumes:
-  mysql-data:
-    external: false
-  node-app:
-    external: true
+# As we are using bind mount for the volume, this is not necessary
+# volumes:
+#   mysql-data:
+#     external: true
+#   node-app:
+#     external: true
 
 networks:
   app-network:
