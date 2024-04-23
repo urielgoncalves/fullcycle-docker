@@ -2,4 +2,4 @@
 It's a simple image that contains a Golang app, which prints the `Full Cycle Rocks!!` message.
 
 # Registry URL
-https://hub.docker.com/u/urielgoncalves/fullcycle
+https://hub.docker.com/r/urielgoncalves/fullcycle
